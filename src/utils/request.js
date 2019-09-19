@@ -6,8 +6,6 @@ import JSONbig from 'json-bigint'
 const request = axios.create({
   baseURL: 'http://ttapi.research.itcast.cn'
 })
-export default request
-
 // 配置处理后端返回的数据中包含超出 JavaScript 安全整数范围问题
 request.defaults.transformResponse = [function (data) {
   try {
@@ -16,3 +14,4 @@ request.defaults.transformResponse = [function (data) {
     return data
   }
 }]
+export default request
